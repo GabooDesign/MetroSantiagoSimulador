@@ -42,7 +42,51 @@
     header h1 {
       font-size: 20px;
     }
+      .hero {
+    height: 100vh;
+    background: url("images/background.gif") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
 
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .hero-logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+
+  .scroll-btn {
+    padding: 10px 20px;
+    background-color: #0055aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+
+  .scroll-btn:hover {
+    background-color: #003f7f;
+  }
     .logo-titulo {
       display: flex;
       align-items: center;
@@ -126,6 +170,15 @@
   </style>
 </head>
 <body>
+  
+<section class="hero">
+  <div class="hero-content">
+    <img src="images/Metro.png" class="hero-logo" alt="Logo">
+    <h1>MetroSantiagoSimulador</h1>
+    <p>Una experiencia inmersiva del metro de Santiago en tu PC</p>
+    <a href="#contenido" class="scroll-btn">Explorar</a>
+  </div>
+</section>
 
     <header id="header">
       <div class="logo-titulo">
