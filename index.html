@@ -19,23 +19,24 @@
       padding-top: 70px;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 70px;
-      background-color: #222;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      z-index: 999;
-      transition: background-color 0.3s ease;
-    }
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #000000;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        z-index: 999;
+        transition: background-color 0.3s ease;
+      }
 
     header.scrolled {
-      background-color: #0055aa;
+      background-color: #0055aa21;
     }
 
     header h1 {
@@ -74,7 +75,8 @@
     .container {
       max-width: 1000px;
       margin: 40px auto;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.623);
+      border-radius: 10px;
       padding: 30px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       display: flex;
@@ -82,16 +84,19 @@
       gap: 20px;
     }
 
+    .full-image {
+      flex: 1 1 100%;
+    }
     .left-column {
       flex: 1 1 60%;
     }
 
-    .right-column {
-      flex: 1 1 35%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.right-column {
+  flex: 1 1 35%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 
     .container h2 {
       margin-bottom: 15px;
@@ -102,6 +107,7 @@
       margin-bottom: 20px;
       line-height: 1.6;
       color: #555;
+      border-radius: 10px;
     }
 
       .full-width {
@@ -130,6 +136,7 @@
       <a href="#historia">Historia</a>
       <a href="#propósitos">Propósitos</a>
       <a href="#avances">Avances</a>
+      <a href="#estado">Estado de Red</a>
     </nav>
   </header>
 
@@ -146,20 +153,27 @@
   <p>Fue pensado para ser un videojuego en donde el jugador puede conducir el sistema de metro y permitirse adentrarse en la cabina de conducción y poder manejar los trenes y explorar la red de Metro en la comodidad del ordenador.</p>
 </div>  
     
-  <div class="right-column">
-  
-  <h2>Hitos</h2>
-  
-  <p> Durante el año</p>
-  
+<div class="right-column">
+  <div>
+    <h2>Hitos</h2>
+    <p>Durante el año se avanzó con la programación básica del sistema, la importación de modelos y el primer tramo entre San Pablo y Neptuno.</p>
   </div>
+</div>
+
 <div class="left-column">
 <h2 id="propositos">Propósito del proyecto - Misión y Visión</h2>
     <p>Este proyecto explora sistema de Metro de Santiago y busca recrearlo a una escala digital que permita a el usuario común, manejar y entender cómo funciona.</p>
   </div>
-</div>
-  
 
+  <div class="right-column">
+    
+    <video autoplay muted loop playsinline>
+      <source src="images/Vipers.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    
+    </div>
+  
   <div class="left-column">
     <h2 id="avances">Propósitos</h2>
     <p>Lorem Ipsum</p>
@@ -171,9 +185,25 @@
       <source src="images/Vipers.mp4" type="video/mp4">
       Tu navegador no soporta la reproducción de video.
     </video>
-
+  
+    </div>
   </div>
+
 </div>
 
+
 </body>
+
+<script>
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
 </html>
