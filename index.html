@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MetroSantiagoSimulador</title>
+  <link rel="Shortcut icon" href="images/metro.png"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("images/background.gif") no-repeat center center fixed;
+      background-size: cover;
+      padding-top: 70px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    header.scrolled {
+      background-color: #0055aa;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    .contenidos {
+      display: flex;
+      gap: 15px;
+    }
+
+    .contenidos a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 8px 12px;
+      background-color: #444;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .contenidos a:hover {
+      background-color: #666;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .left-column {
+      flex: 1 1 60%;
+    }
+
+    .right-column {
+      flex: 1 1 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    video {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <h1>MetroSantiagoSimulador</h1>
+    <nav class="contenidos">
+      <a href="#introduccion">¿Qué es?</a>
+      <a href="#analisis">Análisis</a>
+      <a href="#conclusion">Conclusión</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="left-column">
+      <h2 id="introduccion">¿Qué es?</h2>
+      <p>Este proyecto explora sistema de Metro de Santiago y busca recrearlo a una escala digital que permita a el usuario común, manejar y entender cómo funciona.</p>
+
+      <h2 id="analisis">Análisis</h2>
+      <p>Durante el proceso se analizaron flujos de navegación, criterios de usabilidad y retroalimentaciones de usuarios para iterar y mejorar el producto final.</p>
+
+      <h2 id="conclusion">Conclusión</h2>
+      <p>La experiencia permitió reforzar competencias técnicas y creativas, destacando la importancia del testeo iterativo en entornos de diseño digital.</p>
+    </div>
+
+    <div class="right-column">
+      <video autoplay muted loop playsinline>
+        <source src="images/Vipers.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </div>
+
+</body>
+</html>
