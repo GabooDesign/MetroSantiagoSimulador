@@ -42,6 +42,16 @@
       font-size: 20px;
     }
 
+    .logo-titulo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 45px;
+    }
+
     .contenidos {
       display: flex;
       gap: 15px;
@@ -94,6 +104,14 @@
       color: #555;
     }
 
+      .full-width {
+      flex: 1 1 100%;
+      margin-top: 30px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
     video {
       max-width: 100%;
       border-radius: 10px;
@@ -103,34 +121,59 @@
 </head>
 <body>
 
-  <header id="header">
-    <h1>MetroSantiagoSimulador</h1>
+    <header id="header">
+      <div class="logo-titulo">
+        <img src="images/Metro.png" alt="Logo" class="logo">
+        <h1>MetroSantiagoSimulador</h1>
+      </div>
     <nav class="contenidos">
-      <a href="#introduccion">¿Qué es?</a>
-      <a href="#analisis">Análisis</a>
-      <a href="#conclusion">Conclusión</a>
+      <a href="#historia">Historia</a>
+      <a href="#propósitos">Propósitos</a>
+      <a href="#avances">Avances</a>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="left-column">
-      <h2 id="introduccion">¿Qué es?</h2>
-      <p>Este proyecto explora sistema de Metro de Santiago y busca recrearlo a una escala digital que permita a el usuario común, manejar y entender cómo funciona.</p>
-
-      <h2 id="analisis">Análisis</h2>
-      <p>Durante el proceso se analizaron flujos de navegación, criterios de usabilidad y retroalimentaciones de usuarios para iterar y mejorar el producto final.</p>
-
-      <h2 id="conclusion">Conclusión</h2>
-      <p>La experiencia permitió reforzar competencias técnicas y creativas, destacando la importancia del testeo iterativo en entornos de diseño digital.</p>
-    </div>
-
-    <div class="right-column">
-      <video autoplay muted loop playsinline>
-        <source src="images/Vipers.mp4" type="video/mp4">
-        Tu navegador no soporta la reproducción de video.
-      </video>
-    </div>
+<div class="container">
+  
+  <div class="full-width">
+    <h2> MetroSantiagoSimulador - Proyecto Línea 1</h2>
+    <img src="images/ProyectoL1.png" style="max-width: 75%; border-radius: 10px; display: block; margin: 0 auto;">
   </div>
+  
+<div class="left-column">
+  <h2 id="historia">Historia del proyecto</h2>
+  <p>El proyecto iniciado en Noviembre del año 2017 y siendo retomado en Agosto del año 2020.</p>
+  <p>Fue pensado para ser un videojuego en donde el jugador puede conducir el sistema de metro y permitirse adentrarse en la cabina de conducción y poder manejar los trenes y explorar la red de Metro en la comodidad del ordenador.</p>
+</div>  
+    
+  <div class="right-column">
+  
+  <h2>Hitos</h2>
+  
+  <p> Durante el año</p>
+  
+  </div>
+<div class="left-column">
+<h2 id="propositos">Propósito del proyecto - Misión y Visión</h2>
+    <p>Este proyecto explora sistema de Metro de Santiago y busca recrearlo a una escala digital que permita a el usuario común, manejar y entender cómo funciona.</p>
+  </div>
+</div>
+  
+
+  <div class="left-column">
+    <h2 id="avances">Propósitos</h2>
+    <p>Lorem Ipsum</p>
+  </div>
+  
+  <div class="right-column">
+    
+    <video autoplay muted loop playsinline>
+      <source src="images/Vipers.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+
+  </div>
+</div>
 
 </body>
 </html>
