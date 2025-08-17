@@ -259,4 +259,16 @@
   });
 </script>
 
+<script>
+  document.addEventListener('selectstart', e => {
+    if (e.target.closest('.selectable, input, textarea, [contenteditable="true"]')) return;
+    e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('dragstart', e => {
+    if (e.target.closest('.selectable')) return;
+    e.preventDefault();
+  });
+  document.querySelectorAll('img, a').forEach(el => el.setAttribute('draggable', 'false'));
+</script>
+
 </html>
