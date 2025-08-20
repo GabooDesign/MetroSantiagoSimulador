@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MetroSantiagoSimulador</title>
   <link rel="Shortcut icon" href="images/metro.png"/>
-  <style>
+    <style>
     * {
       margin: 0;
       padding: 0;
@@ -19,21 +19,21 @@
       padding-top: 70px;
     }
 
-      header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 70px;
-        background-color: #000000;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 0 20px;
-        z-index: 999;
-        transition: background-color 0.3s ease;
-      }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background-color: #000000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 20px;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
 
     header.scrolled {
       background-color: #0055aa21;
@@ -42,51 +42,53 @@
     header h1 {
       font-size: 20px;
     }
-      .hero {
-    height: 100vh;
-    background: url("images/background.gif") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-  }
 
-  .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 20px;
-  }
+    .hero {
+      height: 100vh;
+      background: url("images/background.gif") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
 
-  .hero-logo {
-    width: 100px;
-    margin-bottom: 20px;
-  }
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 20px;
+    }
 
-  .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
+    .hero-logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
 
-  .hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-  }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-  .scroll-btn {
-    padding: 10px 20px;
-    background-color: #0055aa;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
 
-  .scroll-btn:hover {
-    background-color: #003f7f;
-  }
+    .scroll-btn {
+      padding: 10px 20px;
+      background-color: #0055aa;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background-color: #003f7f;
+    }
+
     .logo-titulo {
       display: flex;
       align-items: center;
@@ -131,16 +133,17 @@
     .full-image {
       flex: 1 1 100%;
     }
+
     .left-column {
       flex: 1 1 60%;
     }
 
-.right-column {
-  flex: 1 1 35%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
+    .right-column {
+      flex: 1 1 35%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
 
     .container h2 {
       margin-bottom: 15px;
@@ -154,7 +157,7 @@
       border-radius: 10px;
     }
 
-      .full-width {
+    .full-width {
       flex: 1 1 100%;
       margin-top: 30px;
       background-color: #f4f4f4;
@@ -166,6 +169,19 @@
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* --- BLOQUEAR SELECCIÓN Y ARRASTRE --- */
+    html, body, * {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    img, a, svg {
+      -webkit-user-drag: none;
     }
   </style>
 </head>
@@ -244,9 +260,6 @@
 
 </div>
 
-
-</body>
-
 <script>
   const header = document.getElementById("header");
 
@@ -257,17 +270,30 @@
       header.classList.remove("scrolled");
     }
   });
-
-<script>
-  document.addEventListener('selectstart', e => {
-    if (e.target.closest('.selectable, input, textarea, [contenteditable="true"]')) return;
-    e.preventDefault();
-  }, { passive: false });
-  document.addEventListener('dragstart', e => {
-    if (e.target.closest('.selectable')) return;
-    e.preventDefault();
-  });
-  document.querySelectorAll('img, a').forEach(el => el.setAttribute('draggable', 'false'));
 </script>
 
+<script> // Interceptar el evento de clic derecho en la página
+
+// Función para copiar la imagen al portapapeles
+  async function copiarIMGcopy() {
+    try {
+      const response = await fetch("images/copy.png");
+      const blob = await response.blob();
+      await navigator.clipboard.write([
+        new ClipboardItem({ [blob.type]: blob })
+      ]);
+  }
+    catch (error) {
+      console.error("Error al copiar la imagen:", error);
+    }
+}
+
+  document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+      copiarIMGcopy();
+    }
+  );
+</script>
+
+</body>
 </html>
