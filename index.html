@@ -1,297 +1,423 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MetroSantiagoSimulador</title>
-  <link rel="Shortcut icon" href="images/metro.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MetroSantiagoSimulador</title>
+    <link rel="Shortcut icon" href="images/metro.png" />
     <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: url("images/background.gif") no-repeat center center fixed;
-      background-size: cover;
-      padding-top: 70px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: url("images/background.gif") no-repeat center center fixed;
+            background-size: cover;
+            padding-top: 70px;
+        }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 70px;
-      background-color: #000000;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 0 20px;
-      z-index: 999;
-      transition: background-color 0.3s ease;
-    }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            z-index: 999;
+            transition: background-color 0.3s ease;
+        }
 
-    header.scrolled {
-      background-color: #0055aa21;
-    }
+        header.scrolled {
+            background-color: #0055aa21;
+        }
 
-    header h1 {
-      font-size: 20px;
-    }
+        header h1 {
+            font-size: 20px;
+        }
 
-    .hero {
-      height: 100vh;
-      background: url("images/background.gif") no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
+        .hero {
+            height: 100vh;
+            background: url("images/background.gif") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
 
-    .hero-content {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 40px;
-      border-radius: 20px;
-    }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+        }
 
-    .hero-logo {
-      width: 100px;
-      margin-bottom: 20px;
-    }
+        .hero-logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
 
-    .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
 
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
 
-    .scroll-btn {
-      padding: 10px 20px;
-      background-color: #0055aa;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
+        .scroll-btn {
+            padding: 10px 20px;
+            background-color: #0055aa;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
 
-    .scroll-btn:hover {
-      background-color: #003f7f;
-    }
+        .scroll-btn:hover {
+            background-color: #003f7f;
+        }
 
-    .logo-titulo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .logo-titulo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .logo {
-      height: 45px;
-    }
+        .logo {
+            height: 45px;
+        }
 
-    .contenidos {
-      display: flex;
-      gap: 15px;
-    }
+        .contenidos {
+            display: flex;
+            gap: 15px;
+        }
 
-    .contenidos a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      padding: 8px 12px;
-      background-color: #444;
-      border-radius: 5px;
-      transition: background 0.2s;
-    }
+        .contenidos a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
 
-    .contenidos a:hover {
-      background-color: #666;
-    }
+        .contenidos a:hover {
+            background-color: #666;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.623);
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.623);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    .full-image {
-      flex: 1 1 100%;
-    }
+        .full-image {
+            flex: 1 1 100%;
+        }
 
-    .left-column {
-      flex: 1 1 60%;
-    }
+        .left-column {
+            flex: 1 1 60%;
+        }
 
-    .right-column {
-      flex: 1 1 35%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
+        .right-column {
+            flex: 1 1 35%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
 
-    .container h2 {
-      margin-bottom: 15px;
-      color: #333;
-    }
+        .container h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
 
-    .container p {
-      margin-bottom: 20px;
-      line-height: 1.6;
-      color: #555;
-      border-radius: 10px;
-    }
+        .container p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #555;
+            border-radius: 10px;
+        }
 
-    .full-width {
-      flex: 1 1 100%;
-      margin-top: 30px;
-      background-color: #f4f4f4;
-      padding: 20px;
-      border-radius: 10px;
-    }
+        .full-width {
+            flex: 1 1 100%;
+            margin-top: 30px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    video {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+        video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
 
-    /* --- BLOQUEAR SELECCIÓN Y ARRASTRE --- */
-    html, body, * {
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-touch-callout: none;
-    }
+        /* --- BLOQUEAR SELECCIÓN Y ARRASTRE --- */
+        html,
+        body,
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
 
-    img, a, svg {
-      -webkit-user-drag: none;
-    }
-  </style>
+        img,
+        a,
+        svg {
+            -webkit-user-drag: none;
+        }
+    </style>
 </head>
+
 <body>
-  
-<section class="hero">
-  <div class="hero-content">
-    <img src="images/Metro.png" class="hero-logo" alt="Logo">
-    <h1>MetroSantiagoSimulador</h1>
-    <p>Una experiencia inmersiva del metro de Santiago en tu PC</p>
-    <a href="#contenido" class="scroll-btn">Explorar</a>
-  </div>
-</section>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/Metro.png" class="hero-logo" alt="Logo">
+            <h1>MetroSantiagoSimulador</h1>
+            <p>Una experiencia inmersiva del metro de Santiago en tu PC</p>
+            <a href="#contenido" class="scroll-btn">Explorar</a>
+        </div>
+    </section>
 
     <header id="header">
-      <div class="logo-titulo">
-        <img src="images/Metro.png" alt="Logo" class="logo">
-        <h1>MetroSantiagoSimulador</h1>
-      </div>
-    <nav class="contenidos">
-      <a href="#historia">Historia</a>
-      <a href="#propósitos">Propósitos</a>
-      <a href="#avances">Avances</a>
-      <a href="#estado">Estado de Red</a>
-    </nav>
-  </header>
+        <div class="logo-titulo">
+            <img src="images/Metro.png" alt="Logo" class="logo">
+            <h1>MetroSantiagoSimulador</h1>
+        </div>
+    </header>
 
-<div class="container">
-  
-  <div class="full-width">
-    <h2> MetroSantiagoSimulador - Proyecto Línea 1</h2>
-    <img src="images/ProyectoL1.png" style="max-width: 75%; border-radius: 10px; display: block; margin: 0 auto;">
-  </div>
-  
-<div class="left-column">
-  <h2 id="historia">Historia del proyecto</h2>
-  <p>El proyecto iniciado en Noviembre del año 2017 y siendo retomado en Agosto del año 2020.</p>
-  <p>Fue pensado para ser un videojuego en donde el jugador puede conducir el sistema de metro y permitirse adentrarse en la cabina de conducción y poder manejar los trenes y explorar la red de Metro en la comodidad del ordenador.</p>
-</div>  
-    
-<div class="right-column">
-  <div>
-    <h2>Hitos</h2>
-    <p>Durante el año se avanzó con la programación básica del sistema, la importación de modelos y el primer tramo entre San Pablo y Neptuno.</p>
-  </div>
-</div>
+    <div class="container">
 
-<div class="left-column">
-<h2 id="propositos">Propósito del proyecto - Misión y Visión</h2>
-    <p>Este proyecto explora sistema de Metro de Santiago y busca recrearlo a una escala digital que permita a el usuario común, manejar y entender cómo funciona.</p>
-  </div>
+        <div class="full-width">
+            <h2> MetroSantiagoSimulador - Proyecto Línea 1</h2>
+            <img src="images/ProyectoL1.png" style="max-width: 75%; border-radius: 10px; display: block; margin: 0 auto;">
+        </div>
 
-  <div class="right-column">
-    
-    <video autoplay muted loop playsinline>
-      <source src="images/Vipers.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-    
+        <div class="left-column">
+            <h2 id="historia">Historia del proyecto</h2>
+            <p>El proyecto iniciado en Noviembre del año 2017 y siendo retomado en Agosto del año 2020.</p>
+            <p>Fue pensado para ser un videojuego en donde el jugador puede conducir el sistema de metro y permitirse adentrarse en la cabina de conducción y poder manejar los trenes y explorar la red de Metro en la comodidad del ordenador.</p>
+        </div>
+
+        <div class="right-column">
+            <div>
+                <h2>Hitos</h2>
+                <p>Durante el año se avanzó con la programación básica del sistema, la importación de modelos y el primer tramo entre San Pablo y Neptuno.</p>
+            </div>
+        </div>
+
+        <div class="left-column">
+            <h2 id="propositos">Propósito del proyecto - Misión y Visión</h2>
+            <p>Este proyecto explora sistema de Metro de Santiago y busca recrearlo a una escala digital que permita a el usuario común, manejar y entender cómo funciona.</p>
+        </div>
+
+        <div class="right-column">
+
+            <video autoplay muted loop playsinline>
+                <source src="images/Vipers.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+
+        </div>
+
+        <div class="left-column">
+            <h2 id="avances">Propósitos</h2>
+            <p>Lorem Ipsum</p>
+        </div>
+
+        <div class="right-column">
+
+            <video autoplay muted loop playsinline>
+                <source src="images/Vipers.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+
+        </div>
     </div>
-  
-  <div class="left-column">
-    <h2 id="avances">Propósitos</h2>
-    <p>Lorem Ipsum</p>
-  </div>
-  
-  <div class="right-column">
-    
-    <video autoplay muted loop playsinline>
-      <source src="images/Vipers.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-  
+
+<footer>
+    <div class="footer-container">
+        <!-- Contactanos -->
+        <div class="footer-contact">
+            <h3>Contacto</h3>
+            <p>Email:
+                <a href="mailto:scms.gabrielcastillofigueroa.00@gmail.com">
+                    scms.gabrielcastillofigueroa.00@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="footer-social">
+            <h3>¡Síguenos!</h3>
+            <div class="social-icons">
+              <a href="https://www.youtube.com/c/MetroSantiagoSimulador" target="_blank">
+                  <img src="icons/youtube.svg" alt="YouTube">
+              </a>
+                <a href="https://www.instagram.com/metrosantiagosim" target="_blank">
+                    <img src="icons/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/MetroSantiagoSim/" target="_blank">
+                  <img src="icons/Facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://www.threads.com/@metrosantiagosim" target="_blank">
+                  <img src="icons/threads.svg" alt="Threads">
+                </a>
+                <a href="https://x.com/MetroStgoSim" target="_blank">
+                    <img src="icons/x.svg" alt="X">
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<script>
-  const header = document.getElementById("header");
+    <div class="footer-bottom">
+        <p>© 2025 GabooDesign - Todos los derechos reservados</p>
+    </div>
+</footer>
 
-  window.addEventListener("scroll", function() {
-    if (window.scrollY > 0) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+<style>
+    footer {
+        background-color: #111;
+        color: #eee;
+        padding: 40px 20px 20px;
+        margin-top: 40px;
     }
-  });
-</script>
 
-<script> // Interceptar el evento de clic derecho en la página
-
-// Función para copiar la imagen al portapapeles
-  async function copiarIMGcopy() {
-    try {
-      const response = await fetch("images/copy.png");
-      const blob = await response.blob();
-      await navigator.clipboard.write([
-        new ClipboardItem({ [blob.type]: blob })
-      ]);
-  }
-    catch (error) {
-      console.error("Error al copiar la imagen:", error);
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
     }
-}
 
-  document.addEventListener("contextmenu", function(e) {
-      e.preventDefault();
-      copiarIMGcopy();
+    .footer-contact h3,
+    .footer-social h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #fff;
     }
-  );
-</script>
+
+    .footer-contact p,
+    .footer-contact a {
+        font-size: 14px;
+        color: #ccc;
+        text-decoration: none;
+    }
+
+    /* --- Redes Sociales --- */
+    .footer-social .social-icons {
+        display: flex;
+        flex-direction: row;
+        /* íconos en fila */
+        gap: 15px;
+    }
+
+    .footer-social .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: #222;
+        transition: transform 0.3s, background 0.3s;
+    }
+
+    .footer-social .social-icons a img {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) invert(1);
+        /* que salgan blancos en fondo oscuro */
+    }
+
+    .footer-social .social-icons a:hover {
+        background: #0055aa;
+        transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 12px;
+        color: #aaa;
+        border-top: 1px solid #333;
+        padding-top: 15px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-social .social-icons {
+            justify-content: center;
+        }
+    }
+</style>
+
+
+
+    <script>
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 0) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <script>
+        // Interceptar el evento de clic derecho en la página
+        // Función para copiar la imagen al portapapeles
+        async function copiarIMGcopy() {
+            try {
+                const response = await fetch("images/copy.png");
+                const blob = await response.blob();
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        [blob.type]: blob
+                    })
+                ]);
+            } catch (error) {
+                console.error("Error al copiar la imagen:", error);
+            }
+        }
+
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+            copiarIMGcopy();
+        });
+    </script>
 </body>
+
 </html>
