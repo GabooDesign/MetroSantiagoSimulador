@@ -7,364 +7,363 @@
     <title>MetroSantiagoSimulador</title>
     <link rel="Shortcut icon" href="images/Metro.png" />
     <style>
-        /* --- RESET --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* --- RESET --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        /* --- BLOQUEAR SELECCIÓN Y ARRASTRE --- */
-        html,
-        body,
-        * {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
-        }
-        img,
-        a,
-        svg {
-            -webkit-user-drag: none;
-        }
+/* --- BLOQUEAR SELECCIÓN Y ARRASTRE --- */
+    html,
+    body,
+    * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+    img,
+    a,
+    svg {
+        -webkit-user-drag: none;
+    }
 
-        /* --- BODY Y FONDO --- */
-        body {
-            position: relative;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            padding-top: 70px;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("images/background_01.png") no-repeat center center fixed;
-            background-size: cover;
-            opacity: 100%;
-            z-index: -1;
-        }
+/* --- BODY Y FONDO --- */
+    body {
+        position: relative;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        padding-top: 70px;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url("images/background_01.png") no-repeat center center fixed;
+        background-size: cover;
+        opacity: 100%;
+        z-index: -1;
+    }
 
-        /* --- HEADER --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            background-color: #8080802d;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 0 20px;
-            z-index: 999;
-            transition: background-color 1s ease, transform 0.3s;
-        }
-        header.scrolled {
-            background-color: #00000021;
-            opacity: 0;
-        }
-        .logo-titulo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo {
-            height: 45px;
-        }
-        header h1 {
-            font-size: 20px;
-        }
+/* --- HEADER --- */
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #8080802d;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        z-index: 999;
+        transition: background-color 1s ease, transform 0.3s;
+    }
+    header.scrolled {
+        background-color: #00000021;
+        opacity: 0;
+    }
+    .logo-titulo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .logo {
+        height: 45px;
+    }
+    header h1 {
+        font-size: 20px;
+    }
 
-        /* --- HERO PORTADA --- */
-        .hero-portada {
-            width: 100%;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: rgba(0,0,0,0.45);
-            border-radius: 18px;
-            margin-bottom: 40px;
-            padding: 50px 20px 40px 20px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-        }
-        .hero-portada h1 {
-            font-size: 3em;
-            color: #fff;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 12px #0008;
-        }
-        
-        .hero-portada h2 {
-            font-size: 2em;
-            color: #e0e0e0;
-            margin-top: 28px;
-            margin-bottom: 28px;
-            font-weight: 400;
-            text-shadow: 0 2px 8px #0006;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        .hero-portada h2 .hero-text {
-            font-size: 1em; /* Solo ajusta el texto, no la alineación */
-            color: #e0e0e0;
-            font-weight: 400;
-            text-shadow: 0 2px 8px #0006;
-        }
-        
-        .hero-portada img {
-            max-width: 500px;
-            width: 90%;
-            border-radius: 12px;
-            margin: 0 auto;
-            display: block;
-        }
+/* --- HERO PORTADA --- */
+    .hero-portada {
+        width: 100%;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: rgba(0,0,0,0.45);
+        border-radius: 18px;
+        margin-bottom: 40px;
+        padding: 50px 20px 40px 20px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+    .hero-portada h1 {
+        font-size: 3em;
+        color: #fff;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 12px #0008;
+    }
+    
+    .hero-portada h2 {
+        font-size: 2em;
+        color: #e0e0e0;
+        margin-top: 28px;
+        margin-bottom: 28px;
+        font-weight: 400;
+        text-shadow: 0 2px 8px #0006;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero-portada h2 .hero-text {
+        font-size: 1em; /* Solo ajusta el texto, no la alineación */
+        color: #e0e0e0;
+        font-weight: 400;
+        text-shadow: 0 2px 8px #0006;
+    }
+    
+    .hero-portada img {
+        max-width: 500px;
+        width: 90%;
+        border-radius: 12px;
+        margin: 0 auto;
+        display: block;
+    }
 
-        /* --- CONTENEDOR PRINCIPAL Y COLUMNAS --- */
+/* --- CONTENEDOR PRINCIPAL Y COLUMNAS --- */
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background-color: #f0f0f0e4;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .left-column {
+        flex: 1 1 60%;
+    }
+    .right-column {
+        flex: 1 1 35%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .center-column {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .container h2 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .container p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #555;
+        border-radius: 10px;
+    }
+    .full-image {
+        flex: 1 1 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    video {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+/* --- CARRUSEL DE IMÁGENES --- */
+
+    .carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .slides {
+    display: flex;
+    transition: transform 0.6s ease;
+    width: 100%;
+    }
+
+    .slide {
+    min-width: 100%;
+    position: relative;
+    text-align: center;
+    }
+
+    .slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px 12px 0 0;
+    }
+
+    /* --- Alinear el carrusel con el texto --- */
+    .left-column .carrusel,
+    .center-column .carrusel {
+    width: calc(100% - 20px); /* evita que toque los bordes */
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    /* --- Botones de navegación --- */
+    .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: white;
+    font-size: 1.6em;
+    cursor: pointer;
+    width: 44px;         /* ancho igual al alto */
+    height: 44px;        /* alto igual al ancho */
+    padding: 0;          /* sin padding extra */
+    border-radius: 50%;  /* círculo perfecto */
+    display: flex;       /* centra el ícono */
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 10;
+    }
+
+    .prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.45);
+    transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev { left: 12px; }
+    .next { right: 12px; }
+
+    .caption {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.1em;
+    border-radius: 0 0 12px 12px;
+    }
+
+/* --- FOOTER --- */
+    footer {
+        background-color: #111;
+        padding: 40px 20px 20px;
+        margin-top: 40px;
+        border-top: #ccc solid 1px;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .footer-contact h3,
+    .footer-social h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #fff;
+    }
+    .footer-contact p {
+        font-size: 14px;
+        color: #f0f0f0;
+    }
+    .footer-contact a {
+        font-size: 14px;
+        color: #ccc;
+        text-decoration: underline;
+    }
+    .footer-social .social-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .footer-social .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: #222;
+        transition: transform 0.3s, background 0.3s;
+    }
+    .footer-social .social-icons a img {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) invert(1);
+    }
+    .footer-social .social-icons a:hover {
+        background: #0055aa;
+        transform: translateY(-3px);
+    }
+    .footer-credits {
+        text-align: center;
+        font-size: 12px;
+        color: #aaa;
+        border-top: 1px solid #333;
+        padding-top: 15px;
+        width: 100%;
+        background: #111;
+        margin: 0;
+
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 600px) {
+        .hero-portada h1 { font-size: 2em; }
+        .hero-portada h2 { font-size: 1.2em; }
+        .hero-portada img { max-width: 98vw; }
+        .hero-portada { padding: 30px 5px 20px 5px; }
+    }
+    @media (max-width: 768px) {
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background-color: #f0f0f0e4;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .left-column {
-            flex: 1 1 60%;
-        }
-        .right-column {
-            flex: 1 1 35%;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-        .center-column {
-            flex: 1 1 100%;
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            box-sizing: border-box;
+            padding: 10px;
         }
-        .container h2 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .container p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: #555;
-            border-radius: 10px;
-        }
+        .left-column,
+        .right-column,
         .full-image {
             flex: 1 1 100%;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        video {
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: 0;
+            padding: 0;
         }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #111;
-            padding: 40px 20px 20px;
-            margin-top: 40px;
-            border-top: #ccc solid 1px;
-            display: flex;
-            flex-direction: column;
+        .hero-portada {
+            padding: 30px 5px 20px 5px;
         }
         .footer-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        .footer-contact h3,
-        .footer-social h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #fff;
-        }
-        .footer-contact p {
-            font-size: 14px;
-            color: #f0f0f0;
-        }
-        .footer-contact a {
-            font-size: 14px;
-            color: #ccc;
-            text-decoration: underline;
+            flex-direction: column;
+            text-align: center;
         }
         .footer-social .social-icons {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-        }
-        .footer-social .social-icons a {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: #222;
-            transition: transform 0.3s, background 0.3s;
         }
-        .footer-social .social-icons a img {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) invert(1);
+        .center-column {
+            width: 100vw;
+            max-width: 100vw;
+            padding: 0;
         }
-        .footer-social .social-icons a:hover {
-            background: #0055aa;
-            transform: translateY(-3px);
-        }
-        .footer-credits {
-            text-align: center;
-            font-size: 12px;
-            color: #aaa;
-            border-top: 1px solid #333;
-            padding-top: 15px;
-            width: 100%;
-            background: #111;
-            margin: 0;
-
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 600px) {
-            .hero-portada h1 { font-size: 2em; }
-            .hero-portada h2 { font-size: 1.2em; }
-            .hero-portada img { max-width: 98vw; }
-            .hero-portada { padding: 30px 5px 20px 5px; }
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 10px;
-            }
-            .left-column,
-            .right-column,
-            .full-image {
-                flex: 1 1 100%;
-                max-width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            .hero-portada {
-                padding: 30px 5px 20px 5px;
-            }
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-social .social-icons {
-                justify-content: center;
-            }
-            .center-column {
-                width: 100vw;
-                max-width: 100vw;
-                padding: 0;
-            }
-        }
-
-    /* --- CARRUSEL DE IMÁGENES --- */
-
-.carrusel {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-  margin: 20px 0; /* separación vertical */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.6s ease;
-  width: 100%;
-}
-
-.slide {
-  min-width: 100%;
-  position: relative;
-  text-align: center;
-}
-
-.slide img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px 12px 0 0;
-}
-
-/* --- Alinear el carrusel con el texto --- */
-.left-column .carrusel,
-.center-column .carrusel {
-  width: calc(100% - 20px); /* evita que toque los bordes */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* --- Botones de navegación --- */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.25);
-  border: none;
-  color: white;
-  font-size: 1.6em;
-  cursor: pointer;
-  width: 44px;         /* ancho igual al alto */
-  height: 44px;        /* alto igual al ancho */
-  padding: 0;          /* sin padding extra */
-  border-radius: 50%;  /* círculo perfecto */
-  display: flex;       /* centra el ícono */
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, transform 0.2s;
-  z-index: 10;
-}
-
-.prev:hover, .next:hover {
-  background: rgba(255, 255, 255, 0.45);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.prev { left: 12px; }
-.next { right: 12px; }
-
-.caption {
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  font-size: 1.1em;
-  border-radius: 0 0 12px 12px;
-}
+    }
     </style>
 </head>
 
@@ -392,9 +391,7 @@
         <!-- PROPOSITO -->
         <div class="left-column">
             <h2 id="proposito">Propósito del proyecto</h2>
-            <p>Este proyecto se considera como una plataforma de simulación, donde el jugador toma el rol como un conductor un tren del sistema de metro y puede recorrer toda la red desde la comodidad de su ordenador o visor de Realidad Virtual.</p>
-            <p>Su enfoque es que, más allá de manejar los trenes, el usuario pueda explorar los distintos recorridos, estaciones y escenarios, sintiendo cómo sería formar parte de una operación real del metro. </p>
-            <p>Cada detalle dentro de la simulación está diseñado con detalle, permitiendo un escenario lo más cercano a la realidad.</p>
+            <p>Este proyecto se considera como una plataforma de simulación donde el jugador asume el rol de conductor del Metro de Santiago y puede recorrer toda la red desde la comodidad de su ordenador o visor de Realidad Virtual. <br> Más allá de manejar los trenes, el usuario puede explorar los distintos recorridos, estaciones y entornos, experimentando cómo sería formar parte de una operación real del metro. <br> Cada elemento de la simulación está cuidadosamente diseñado para ofrecer una experiencia lo más fiel posible a la realidad.</p>
             
         </div>
 
