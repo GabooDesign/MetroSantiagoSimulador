@@ -151,6 +151,15 @@
             align-items: flex-start;
             justify-content: flex-start;
         }
+        .center-column {
+            flex: 1 1 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
         .container h2 {
             margin-bottom: 10px;
             color: #333;
@@ -272,7 +281,90 @@
             .footer-social .social-icons {
                 justify-content: center;
             }
+            .center-column {
+                width: 100vw;
+                max-width: 100vw;
+                padding: 0;
+            }
         }
+
+    /* --- CARRUSEL DE IMÁGENES --- */
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 20px 0; /* separación vertical */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+/* --- Alinear el carrusel con el texto --- */
+.left-column .carrusel,
+.center-column .carrusel {
+  width: calc(100% - 20px); /* evita que toque los bordes */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Botones de navegación --- */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: white;
+  font-size: 1.6em;
+  cursor: pointer;
+  width: 44px;         /* ancho igual al alto */
+  height: 44px;        /* alto igual al ancho */
+  padding: 0;          /* sin padding extra */
+  border-radius: 50%;  /* círculo perfecto */
+  display: flex;       /* centra el ícono */
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 10;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+.caption {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.1em;
+  border-radius: 0 0 12px 12px;
+}
     </style>
 </head>
 
@@ -297,44 +389,61 @@
             </h2>
         </div>
 
-        <!-- HISTORIA -->
+        <!-- PROPOSITO -->
         <div class="left-column">
-            <h2 id="historia">Propósito del proyecto</h2>
-            <p>Fue pensado como una plataforma de simulación donde el jugador puede conducir un tren del sistema de metro, entrar en la cabina de conducción y recorrer toda la red desde la comodidad de su ordenador.</p>
-            <p>La idea es que, más allá de manejar los trenes, el usuario pueda explorar los distintos recorridos, estaciones y escenarios, sintiendo cómo sería formar parte de una operación real del metro. Cada detalle está diseñado para ofrecer una experiencia  inmersiva, que combina, entretenimiento y curiosidad por el transporte urbano.</p>
+            <h2 id="proposito">Propósito del proyecto</h2>
+            <p>Este proyecto se considera como una plataforma de simulación, donde el jugador toma el rol como un conductor un tren del sistema de metro y puede recorrer toda la red desde la comodidad de su ordenador o visor de Realidad Virtual.</p>
+            <p>Su enfoque es que, más allá de manejar los trenes, el usuario pueda explorar los distintos recorridos, estaciones y escenarios, sintiendo cómo sería formar parte de una operación real del metro. </p>
+            <p>Cada detalle dentro de la simulación está diseñado con detalle, permitiendo un escenario lo más cercano a la realidad.</p>
             
-        </div>
-
-        <!-- HITOS -->
-        <div class="right-column">
-            <div>
-                <h2>Historia del proyecto</h2>
-                <p> Este proyecto nació en noviembre de 2017, inspirado por mi gusto por el transporte y los videojuegos. Desde el inicio, fue una forma de aprender cómo se construyen los mundos virtuales y entender mejor cómo funcionan los sistemas detrás de ellos. </p>
-                <p> En agosto de 2020 lo retomé con una mirada más enfocada, buscando unir diseño, tecnología y movilidad. Hoy sigue siendo un espacio personal de exploración, donde cada avance refleja mi curiosidad y mi pasión por crear. </p>
-            </div>
-        </div>
-
-        <!-- PROPÓSITO -->
-        <div class="left-column">
-            <h2 id="propositos">Hitos </h2>
-            <p> Durante el año se avanzó con la programación básica del sistema, la importación de modelos y el primer tramo entre San Pablo y Neptuno.</p>
         </div>
 
         <!-- VIDEO 1 -->
         <div class="right-column">
             <video autoplay muted loop playsinline>
-                <source src="images/Vipers.mp4" type="video/mp4">
+                <source src="images/Cruce_de_trenes.mp4" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
             </video>
+        </div>
+
+        <!-- HITOS -->
+        <div class="left-column">
+            <h2 id="historia">Historia del proyecto</h2>
+            <p> Este proyecto nació en noviembre de 2017, inspirado por mi gusto por el transporte y los videojuegos. Desde el inicio, fue una forma de aprender cómo se construyen los mundos virtuales y entender mejor cómo funcionan los sistemas detrás de ellos. <br></br> En agosto de 2020 lo retomé con una mirada más enfocada, buscando unir diseño, tecnología y movilidad. Hoy sigue siendo un espacio personal de exploración, donde cada avance refleja mi curiosidad y mi pasión por crear. </p>
+        </div>
+
+        <!-- Carrusel de fotos -->
+        <div class="carrusel">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="images/SCMS/TNP-beta-1.png" alt="Vista Talleres Neptuno beta 1">
+                </div>
+                <div class="slide">
+                    <img src="images/SCMS/TNP-beta-2.png" alt="Vista de los Talleres Neptuno beta 2">
+                </div>
+                <div class="slide">
+                    <img src="images/SCMS/Tunel_TNP-SP.png" alt="Tunel de enlace beta">
+                </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        </div>
+
+        <div class="center-column">
+            <p style="text-align: center;">
+            Imágenes recuperadas (2017)<br>
+            del proyecto entonces llamado como <strong>SCMS</strong><br>
+            <em>(Simulador de Conducción del Metro de Santiago)</em>
+            </p>
         </div>
 
         <!-- AVANCES -->
         <div class="left-column">
             <h2 id="avances">Avances</h2>
-            <p>Lorem Ipsum</p>
+            <p>No hay avances >:(</p>
         </div>
 
-        <!-- VIDEO 2 -->
+        <!-- VIDEO 3 -->
         <div class="right-column">
             <video autoplay muted loop playsinline>
                 <source src="images/Vipers.mp4" type="video/mp4">
@@ -403,6 +512,29 @@
         document.addEventListener("contextmenu", function(e) {
             e.preventDefault();
         });
+    </script>
+
+    <script>
+    // Carrusel de imágenes
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    document.querySelector('.next').addEventListener('click', () => {
+        changeSlide(1);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        changeSlide(-1);
+    });
+
+    function changeSlide(direction) {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
+        document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Cambio automático cada 5 segundos
+    setInterval(() => changeSlide(1), 5000);
     </script>
 </body>
 
