@@ -11,10 +11,20 @@ Simulador **No oficial**, creado por un **Aficionado** para **Aficionados al Met
 ![Trenes de Línea 1](/images/ProyectoL1.png "Trenes de Línea 1")
 
 ---
+### Redes del simulador:
+
+[<img src="/icons/YouTube.svg" width="30">](https://www.youtube.com/c/MetroSantiagoSimulador?sub_confirmation=1) [YouTube](https://www.youtube.com/c/MetroSantiagoSimulador?sub_confirmation=1)
+[<img src="/icons/Instagram.svg" width="30">](https://www.instagram.com/metrosantiagosim/) [Instagram](https://www.instagram.com/metrosantiagosim/)
+[<img src="/icons/Facebook.svg" width="30">](https://www.facebook.com/MetroSantiagoSim/) [Facebook](https://www.facebook.com/MetroSantiagoSim/)
+[<img src="/icons/TikTok.svg" width="30">](https://www.tiktok.com/@metrosantiagosim) [TikTok](https://www.tiktok.com/@metrosantiagosim)
+[<img src="/icons/Threads.svg" width="30">](https://www.threads.com/@metrosantiagosim) [Threads](https://www.threads.com/@metrosantiagosim)
+[<img src="/icons/X.svg" width="30">](https://twitter.com/MetroStgoSim) [X/Twitter](https://twitter.com/MetroStgoSim)
+[<img src="/icons/Gmail.svg" width="30">](mailto:scms.gabrielcastillofigueroa.00@gmail.com) [Contacto](mailto:scms.gabrielcastillofigueroa.00@gmail.com)
+
 Dentro de este repositorio se documentan los distintos puntos principales:
 
 1. **Propósito del proyecto**: Describe el objetivo y motivación del simulador.
-2. **Historia del proyecto**: Relata la evolución desde versiones anteriores (como SCMS 2017) hasta la actual.
+2. **Historia del proyecto**: Relata la evolución desde versiones anteriores (2017 - hasta la actualiad).
 3. **Galería Visual**: Capturas, renders y clips que muestran avances del proyecto.
 4. **Hitos**: Hitos del proyecto y momentos importantes del proyecto.
 5. **Estado de desarrollo**: Resumen de qué funciones están completadas, en progreso y planificadas.
