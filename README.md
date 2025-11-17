@@ -38,6 +38,7 @@ Dentro de este repositorio se documentan los distintos puntos principales:
 ### Próximamente
 
 Secciones futuras del sitio y del proyecto que se esperan ver en el futuro:  
+- Desarrollo de joystick simulando cabina real
 - Nuevas líneas en desarrollo y estaciones modeladas
 - Nuevos trenes y actualizaciones a los existentes
 - Posible implementación de modo Multijugador LAN
