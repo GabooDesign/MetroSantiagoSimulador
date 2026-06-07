@@ -4,7 +4,6 @@
 Repositorio (EN DESARROLLO) creado para **registrar avances y características extras** del simulador de Metro de Santiago.
 
 Simulador **No oficial**, creado por un **Aficionado** para **Aficionados al Metro de Santiago**.  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/becb3b74-2e76-4dd2-9d59-29580b302c6b/deploy-status)](https://app.netlify.com/projects/metrosantiagosimulador/deploys)
 
 ---
 
