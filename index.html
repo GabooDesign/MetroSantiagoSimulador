@@ -3,62 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página en Desarrollo</title>
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family: Arial, sans-serif;
-            background:#0f172a;
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            min-height:100vh;
-            text-align:center;
-        }
-
-        .container{
-            max-width:600px;
-            padding:40px;
-        }
-
-        h1{
-            font-size:3rem;
-            margin-bottom:20px;
-        }
-
-        p{
-            font-size:1.2rem;
-            color:#cbd5e1;
-            line-height:1.6;
-        }
-
-        .badge{
-            display:inline-block;
-            background:#2563eb;
-            padding:10px 20px;
-            border-radius:999px;
-            margin-bottom:25px;
-            font-weight:bold;
-        }
-    </style>
+    <title>Metro Santiago Simulador</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Logo/Favicon.svg" type="image/svg+xml">
+    
+    <meta property="og:title" content="Metro Santiago Simulador">
+    <meta property="og:description" content="Proyecto independiente de simulación ferroviaria basado en el Metro de Santiago.">
+    <meta property="og:image" content="/og-image.jpg">
 </head>
+
+
+
 <body>
-    <div class="container">
-        <div class="badge">🚧 Sitio en construcción</div>
+    <header class="navbar">
+    <div class="navbar-container">
 
-        <h1>Página en Desarrollo</h1>
+        <a href="#" class="logo">
+            <img src="Logo/Logo_MetroSimulator.svg" alt="Metro Santiago Simulador">
+        </a>
 
+        <button class="menu-toggle" aria-label="Abrir menú">
+        ☰
+        </button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#desarrollo">Desarrollo</a></li>
+                <li><a href="#exhibiciones">Exhibiciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+    <!-- Hero section -->
+    <section id="inicio" class="hero"> 
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+
+        <img
+            src="Logo/Metro Santiago Simulador.svg" 
+            alt="Metro Santiago Simulador" 
+            class="hero-logo">
+
+        <p class="hero-description">
+            Plataforma de simulación de conducción, investigación y preservación digital del sistema ferroviario metropolitano.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#desarrollo" class="btn-primary">
+                Proyecto en desarrollo
+            </a>
+
+            <a href="#proyectos" class="btn-secondary">
+                Ver proyectos
+            </a>
+        </div>
+    </div>
+    </section>
+
+        <!-- Projects section -->
+    <section id="proyectos" class="projects">
+    <div class="projects-container">
+
+        <h2 class="section-title">
+            Proyectos
+        </h2>
+        <div class="projects-grid">
+
+    <article class="project-card">
+    <img
+        src="Images/Projects/mss.jpg"
+        alt="Metro Santiago Simulador"
+        class="project-image">
+
+    <div class="project-content">
+
+        <span class="project-type">
+            Proyecto Principal
+        </span>
+        <h3>
+            Metro Santiago Simulador
+        </h3>
         <p>
-            Estamos trabajando en esta sección para ofrecer contenido actualizado
-            sobre el proyecto. Vuelve pronto para conocer las novedades.
+            Opera el metro de manera inmersiva en Realidad Virtual.
         </p>
     </div>
+    <a href="construction-site.html" class="project-button">
+        Ver más
+    </a>
+</article>
+
+    <article class="project-card">
+    <img
+        src="Images/Projects/mssvr.jpg"
+        alt="Metro Santiago Simulador VR"
+        class="project-image">
+
+    <div class="project-content">
+
+        <span class="project-type">
+            Proyecto VR
+        </span>
+        <h3>
+            Metro Santiago Simulador VR
+        </h3>
+        <p>
+            Opera el metro de manera inmersiva en Realidad Virtual.
+        </p>
+    </div>
+    <a href="construction-site.html" class="project-button">
+        Ver más
+    </a>
+</article>
+
+    <article class="project-card">
+    <img
+        src="Images/Projects/mss2d.jpg"
+        alt="Metro Santiago Simulador 2D"
+        class="project-image">
+
+    <div class="project-content">
+
+        <span class="project-type">
+            Proyecto 2D
+        </span>
+        <h3>
+            Metro Santiago Simulador 2D
+        </h3>
+        <p>
+            Simulador móvil y web accesible para todos.
+        </p>
+    </div>
+    <a href="construction-site.html" class="project-button">
+            Ver más
+        </a>
+</article>
+
+<article class="project-card">
+    <img
+        src="Images/Projects/MSSXR.jpg"
+        alt="Metro Santiago Simulador Research"
+        class="project-image">
+
+    <div class="project-content">
+
+        <span class="project-type">
+            Proyecto Académico
+        </span>
+        <h3>
+            Metro Santiago Simulador Research
+        </h3>
+        <p>
+            Exploramos, analizamos y aportamos al conocimiento.
+        </p>
+    </div>
+    <a href="construction-site.html" class="project-button">
+            Ver más
+        </a>
+</article>
+
+</div>
+    </div>
+    </section>
+
+        <!-- Status section -->
+    <section id="desarrollo" class="projects">
+    <div class="projects-container">
+
+        <h2 class="section-title">
+            Estado del proyecto principal
+        </h2>
+
+        <div class="status-timeline">
+
+    <div class="status-progress"></div>
+        <div class="status-item completed">
+            <div class="status-icon">
+                <img src="icons/Train.svg" alt="Train">
+            </div>
+
+            <div class="status-content">
+                <h3>Sistemas de conducción</h3>
+                <p>Completado</p>
+            </div>
+        </div>
+
+        <div class="status-item completed">
+            <div class="status-icon">
+                <img src="icons/Railway.svg" alt="Railway">
+            </div>
+
+            <div class="status-content">
+                <h3>Infraestructura principal</h3>
+                <p>En desarrollo</p>
+            </div>
+        </div>
+
+        <div class="status-item completed">
+            <div class="status-icon">
+                <img src="icons/Train.svg" alt="Train">
+            </div>
+
+            <div class="status-content">
+                <h3>Material rodante neumático</h3>
+                <p>En desarrollo</p>
+            </div>
+        </div>
+
+        <div class="status-item pending">
+            <div class="status-icon">
+                <img src="icons/TrafficLight.svg" alt="Traffic Light">
+            </div>
+
+            <div class="status-content">
+                <h3>Operación ferroviaria</h3>
+                <p>En desarrollo</p>
+            </div>
+        </div>
+
+        <div class="status-item pending">
+            <div class="status-icon">
+                <img src="icons/Search.svg" alt="Research">
+            </div>
+
+            <div class="status-content">
+                <h3>Interfaces y experiencia</h3>
+                <p>En desarrollo</p>
+            </div>
+        </div>
+
+        <div class="status-item pending">
+            <div class="status-icon">
+                <img src="icons/Rocket.svg" alt="Rocket">
+            </div>
+
+            <div class="status-content">
+                <h3>Early Access Testing</h3>
+                <p>No iniciado</p>
+            </div>
+        </div>
+    </div>
+
+        <p class="status-description">
+            Actualmente se encuentran completados los sistemas de conducción, infraestructura principal y gran parte del material rodante. El desarrollo continúa en las áreas de señalización e interfaces visuales con miras al lanzamiento Early Access.
+        </p>
+    </div>
+    </section>
+
+<!-- exhibitions section -->
+    <section id="exhibiciones" class="projects">
+    <div class="projects-container">
+        <h2 class="section-title">
+            Exhibiciones y presentaciones
+        </h2>
+    </div>
+        <div class="projects-container">
+
+        <div class="projects-grid">
+            <!-- SANFIC XR -->
+            <article class="project-card">
+            <img
+                src="images/exhibitions/sanfic.jpg""
+                alt="Metro Santiago Simulador Research"
+                class="project-image">
+            <div class="project-content">
+                <span class="project-type">
+                    Movistar Arena, Santiago
+                </span>
+                <h3>
+                    SANFIC INDUSTRIA XR | 2024
+                </h3>
+                <p>
+                    Exhibición del proyecto en la sección "Semillero de nuevas realidades" del Festival de Cine de Santiago, SANFIC 2024.
+                </p>
+            </div>
+                <a href="https://www.instagram.com/p/C-Y7cqLOFWL/" class="project-button">Ver más</a>
+            </article>
+
+            <!-- Nuble Cine -->
+            <article class="project-card">
+            <img
+                src="images/exhibitions/nublecine.jpg""
+                alt="Metro Santiago Simulador Research"
+                class="project-image">
+            <div class="project-content">
+                <span class="project-type">
+                    Centro Cultural Municipal de Chillán
+                </span>
+                <h3>
+                    Festival de Cine Nacional de Ñuble | 2025
+                </h3>
+                <p>
+                    Exhibición del proyecto en la sección "Sala de Realidad Virtual y Nuevos Medios" de la edición 6° del Festival de Cine Nacional de Ñuble, 2025.
+                </p>
+            </div>
+            <a href="https://www.instagram.com/p/DEsMj6ruyZT/" class="project-button">Ver más</a>
+            </article>
+
+            <!-- DNSA -->
+            <article class="project-card">
+            <img
+                src="images/exhibitions/dnsa.jpg""
+                alt="Metro Santiago Simulador Research"
+                class="project-image">
+            <div class="project-content">
+                <span class="project-type">
+                    Calle Agustinas con Paseo Ahumada, Santiago
+                </span>
+                <h3>
+                    Dia Nacional Sin Auto | 2025
+                </h3>
+                <p>
+                    Exhibición del proyecto en el marco del Día Nacional Sin Auto, Gestionado por Transport Community Chile y el Ministerio de Transporte y Telecomunicaciones de Chile, 2025.
+                </p>
+            </div>
+            <a href="https://www.instagram.com/p/DO_l4h4kTNV/" class="project-button">Ver más</a>
+            </article>
+
+            <!-- 50 años del metro -->
+            <article class="project-card">
+            <img
+                src="images/exhibitions/50.jpg"
+                alt="Metro Santiago Simulador Research"
+                class="project-image">
+            <div class="project-content">
+                <span class="project-type">
+                    Plaza de la Ciudadanía, Santiago
+                </span>
+                <h3>
+                    Fiesta Ciudadana 50 años del Metro de Santiago | 2025
+                </h3>
+                <p>
+                    Exhibición del proyecto en el marco del Día Nacional Sin Auto, Gestionado por Transport Community Chile y Metro de Santiago, 2025.
+                </p>
+            </div>
+            <a href="https://www.instagram.com/p/DPPbuM0kTE4/" class="project-button">Ver más</a>
+            </article>
+        </div>
+
+    </section>
+
+<!-- Distribution Section -->
+    <section class="distribution">
+    <div class="distribution-container">
+
+        <h2 class="section-title">
+            Próximamente en Tiendas Digitales
+        </h2>
+
+        <div class="distribution-content">
+
+            <div class="distribution-image">
+                <img src="images/store/store-1.jpg" alt="Interior del tren">
+            </div>
+
+            <div class="distribution-image">
+                <img src="images/store/store-2.jpg" alt="Tren en estación">
+            </div>
+
+            <div class="distribution-info">
+                <p>
+                    El simulador principal llegará a las tiendas digitales con una experiencia completa y en constante evolución.
+                </p>
+
+                <ul>
+                    <li>Modo Historia</li>
+                    <li>Operación auténtica del Metro de Santiago</li>
+                    <li>Sistemas ferroviarios auténticos</li>
+                    <li>Actualizaciones constantes</li>
+                </ul>
+
+                <button disabled>No Disponible</button>
+            </div>
+
+        </div>
+
+    </div>
+    </section>
+
+
+<!-- colaborations section -->
+    <section id="contacto" class="collaborations">
+
+    <div class="collaborations-overlay"></div>
+
+    <div class="collaborations-container">
+
+        <div class="collaborations-content">
+
+            <h2 class="section-title">
+                Propuestas y<br>colaboraciones
+            </h2>
+
+            <p class="collaborations-description">
+                Siempre abierto a nuevas ideas, proyectos y colaboraciones que impulsen Metro Santiago Simulador.
+            </p>
+
+            <a href="mailto:contacto@metrosantiagosim.cl" class="contact-card">
+
+                <div class="contact-icon">
+                    <img src="icons/mail.svg" alt="">
+                </div>
+
+                <div class="contact-info">
+                    <h3>Correo Electrónico</h3>
+                    <p>contacto@metrosantiagosim.cl</p>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Logo -->
+        <div class="footer-brand">
+            <img
+                src="Logo/Logo_MetroSimulator.svg"
+                alt="Metro Santiago Simulador">
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-socials">
+
+            <a href="https://www.instagram.com/metrosantiagosim/">
+                <img src="icons/RRSS/instagram.svg" alt="Instagram">
+            </a>
+
+            <a href="https://www.tiktok.com/@metrosantiagosim">
+                <img src="icons/RRSS/tiktok.svg" alt="TikTok">
+            </a>
+
+            <a href="https://www.youtube.com/c/MetroSantiagoSimulador">
+                <img src="icons/RRSS/youtube.svg" alt="YouTube">
+            </a>
+
+            <a href="https://www.threads.com/@metrosantiagosim">
+                <img src="icons/RRSS/threads.svg" alt="Threads">
+            </a>
+
+            <a href="https://www.facebook.com/MetroSantiagoSim/">
+                <img src="icons/RRSS/facebook.svg" alt="Facebook">
+            </a>
+
+            <a href="https://x.com/MetroStgoSim">
+                <img src="icons/RRSS/x.svg" alt="X">
+            </a>
+
+        </div>
+
+        <!-- Credits -->
+        <div class="footer-info">
+            <p>
+                © 2026 Gabriel Castillo (GabooDesign)
+            </p>
+
+            <p>
+                Proyecto no afiliado a Metro S.A.
+            </p>
+        </div>
+
+    </div>
+
+    </footer>
+
+
+<!-- scripts -->
+<!-- Hamburguer script -->
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    menuToggle.textContent =
+        navLinks.classList.contains('active')
+        ? '✕'
+        : '☰';
+});
+</script>
+
+<!-- Avoid Drag and Drop script -->
+<script>
+document.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener('selectstart', (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+</script>
+
+<!-- Status timeline script -->
+<script>
+
+const timeline =
+    document.querySelector('.status-timeline');
+
+const progressLine =
+    document.querySelector('.status-progress');
+
+function updateProgress(){
+
+    const completedItems =
+        document.querySelectorAll('.status-item.completed');
+
+    if(completedItems.length === 0) return;
+
+    const lastCompleted =
+        completedItems[completedItems.length - 1];
+
+    const icon =
+        lastCompleted.querySelector('.status-icon');
+
+    const timelineRect =
+        timeline.getBoundingClientRect();
+
+    const iconRect =
+        icon.getBoundingClientRect();
+
+    /* MOBILE */
+    if(window.innerWidth <= 768){
+
+        const height =
+            iconRect.top -
+            timelineRect.top +
+            iconRect.height / 2;
+
+        progressLine.style.width = "4px";
+        progressLine.style.height = `${height}px`;
+
+        progressLine.style.left = "30px";
+        progressLine.style.top = "30px";
+    }
+
+    /* DESKTOP */
+    else{
+
+        const width =
+            iconRect.left -
+            timelineRect.left +
+            iconRect.width / 2;
+
+        progressLine.style.width =
+            `${width}px`;
+
+        progressLine.style.height = "4px";
+
+        progressLine.style.left = "0";
+        progressLine.style.top = "30px";
+    }
+}
+
+window.addEventListener('load', updateProgress);
+window.addEventListener('resize', updateProgress);
+
+</script>
+
 </body>
 </html>
