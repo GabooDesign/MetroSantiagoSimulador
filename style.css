@@ -143,6 +143,7 @@ body{
     z-index: 2;
 
     max-width: 650px;
+    font-size: .8rem;
 }
 
 .hero-logo{
@@ -153,7 +154,7 @@ body{
 .hero-description{
     margin-top: 25px;
 
-    font-size: 1.4rem;
+    font-size: 1rem;
     line-height: 1.6;
 
     color: #E6E6E6;
