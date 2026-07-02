@@ -1,9 +1,9 @@
-# MetroSantiagoSimulador
-### Plataforma de Simulación del Metro de Santiago
+# Subway Chile Simulator
+### Plataforma de Simulación de subterráneos de Chile
 
-Repositorio (EN DESARROLLO) creado para **registrar avances y características extras** del simulador de Metro de Santiago.
+Repositorio creado para **registrar avances y características extras** del simulador de subterráneos.
 
-Simulador **No oficial**, creado por un **Aficionado** para **Aficionados al Metro de Santiago**.  
+Simulador **No oficial**, creado por un **Aficionado** para **Aficionados de los sistemas subterráneos de Chile**.  
 
 ---
 
